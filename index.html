@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Thermoformeuse</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/alarms.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+
+        <h1>Dashboard Thermoformeuse</h1>
+        <div class="version">version 1.0</div>
+    </div>
+
+    <main>
+        <section class="temperature-grid">
+            <div class="temperature-block">
+                <h2>Température Zone 1</h2>
+                <div class="temp-circle">
+                    <div class="temp-value">0°C</div>
+                </div>
+                <div class="slider-container">
+                    <label>Consigne :</label>
+                    <input type="range" class="slider" min="0" max="200" value="0">
+                </div>
+                <div class="slider-container">
+                    <label>
+                        Seuil d'alarme : <span class="slider-value">0°C</span>
+                    </label>
+                    <input type="range" class="slider alarme" min="0" max="200" value="0">
+                </div>
+                <div class="zone-status">
+                    État de la zone : <span class="status-text">inactive</span>
+                </div>
+                <div class="button-group">
+                    <button class="control-btn">ON</button>
+                    <button class="control-btn">OFF</button>
+                    <button class="control-btn">AUTO</button>
+                </div>
+            </div>
+
+            <div class="temperature-block">
+                <h2>Température Zone 2</h2>
+                <div class="temp-circle">
+                    <div class="temp-value">0°C</div>
+                </div>
+                <div class="slider-container">
+                    <label>Consigne :</label>
+                    <input type="range" class="slider" min="0" max="200" value="0">
+                </div>
+                <div class="slider-container">
+                    <label>
+                        Seuil d'alarme : <span class="slider-value">0°C</span>
+                    </label>
+                    <input type="range" class="slider alarme" min="0" max="200" value="0">
+                </div>
+                <div class="zone-status">
+                    État de la zone : <span class="status-text">inactive</span>
+                </div>
+                <div class="button-group">
+                    <button class="control-btn">ON</button>
+                    <button class="control-btn">OFF</button>
+                    <button class="control-btn">AUTO</button>
+                </div>
+            </div>
+
+            <div class="temperature-block">
+                <h2>Température Zone 3</h2>
+                <div class="temp-circle">
+                    <div class="temp-value">0°C</div>
+                </div>
+                <div class="slider-container">
+                    <label>
+                        <span>Consigne :</span>
+                        <span class="slider-value">0°C</span>
+                    </label>
+                    <input type="range" class="slider" min="0" max="200" value="0">
+                </div>
+                <div class="slider-container">
+                    <label>
+                        Seuil d'alarme : <span class="slider-value">0°C</span>
+                    </label>
+                    <input type="range" class="slider alarme" min="0" max="200" value="0">
+                </div>
+                <div class="zone-status">
+                    État de la zone : <span class="status-text">inactive</span>
+                </div>
+                <div class="button-group">
+                    <button class="control-btn">ON</button>
+                    <button class="control-btn">OFF</button>
+                    <button class="control-btn">AUTO</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="machine-separator"></div>
+        <div class="caisson-container">
+            <div class="caisson">
+                <!-- Effet Spline -->
+                <div class="spline-3d-container">
+                    <div class="spline-3d-face front"></div>
+                    <div class="spline-3d-face back"></div>
+                    <div class="spline-3d-face left"></div>
+                    <div class="spline-3d-face right"></div>
+                    <div class="spline-3d-face top"></div>
+                    <div class="spline-3d-face bottom"></div>
+                </div>                
+                <div class="caisson-back-wall"></div>
+                <div class="caisson-left-wall"></div>
+                <div class="caisson-back-wall-depth"></div>
+                <div class="caisson-left-wall-depth"></div>
+                <div class="caisson-right-wall-depth"></div>
+                <div class="caisson-front-wall-depth"></div>
+                <div class="half-separator half-top-1">
+                    <div class="half-separator-back-wall"></div>
+                    <div class="half-separator-left-wall"></div>
+                </div>
+                <div class="half-separator half-top-2">
+                    <div class="half-separator-back-wall"></div>
+                    <div class="half-separator-left-wall"></div>
+                </div>
+                <div class="half-separator half-bottom-1">
+                    <div class="half-separator-back-wall"></div>
+                    <div class="half-separator-left-wall"></div>
+                </div>
+                <div class="half-separator half-bottom-2">
+                    <div class="half-separator-back-wall"></div>
+                    <div class="half-separator-left-wall"></div>
+                </div>
+                <div class="verin verin-left">
+                    <div class="verin-back-wall"></div>
+                    <div class="verin-left-wall"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100">
+                        <g transform="translate(50,20)">
+                            <!-- Corps principal avec effet 3D -->
+                            <path d="M200,0 h100 v40 h-100 v-40 M200,0 v-5 h100 v5" 
+                                  fill="#0f0f17" stroke="rgba(148, 130, 79, 0.3)" stroke-width="0.5"/>
+                            
+                            <!-- Tige extensible avec effet 3D -->
+                            <path d="M0,10 h200 v20 h-200 v-20 M0,10 v-5 h200 v5" 
+                                  fill="#4f9482" stroke="rgba(148, 130, 79, 0.3)" stroke-width="0.5"/>
+                            
+                            <!-- Supports de montage avec effet 3D -->
+                            <path d="M-10,5 h20 v30 h-20 v-30 M-10,5 v-5 h20 v5" 
+                                  fill="#0f0f17" stroke="rgba(148, 130, 79, 0.3)" stroke-width="0.5"/>
+                            <circle cx="0" cy="20" r="5" fill="#4f9482"/>
+                            
+                            <path d="M290,5 h20 v30 h-20 v-30 M290,5 v-5 h20 v5" 
+                                  fill="#0f0f17" stroke="rgba(148, 130, 79, 0.3)" stroke-width="0.5"/>
+                            <circle cx="300" cy="20" r="5" fill="#4f9482"/>
+                            
+                            <!-- Boîtier électrique avec effet 3D -->
+                            <path d="M220,0 h40 v15 h-40 v-15 M220,0 v-5 h40 v5" 
+                                  fill="#0f0f17" stroke="rgba(148, 130, 79, 0.3)" stroke-width="0.5"/>
+                            <path d="M240,-15 C240,-5 240,0 240,0" stroke="#4f9482" stroke-width="1"/>
+                            <path d="M250,-15 C250,-5 250,0 250,0" stroke="#0f0f17" stroke-width="1"/>
+                            
+                            <!-- Points de capteur -->
+                            <circle cx="100" cy="35" r="3" fill="#f00" class="sensor-point"/>
+                            <circle cx="200" cy="35" r="3" fill="#f00" class="sensor-point"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="verin verin-right">
+                    <div class="verin-back-wall"></div>
+                    <div class="verin-left-wall"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100">
+                        <g transform="translate(50,20)">
+                            <!-- Corps principal avec effet 3D -->
+                            <path d="M200,0 h100 v40 h-100 v-40 M200,0 v-5 h100 v5" 
+                                  fill="#0f0f17" stroke="rgba(148, 130, 79, 0.3)" stroke-width="0.5"/>
+                            
+                            <!-- Tige extensible avec effet 3D -->
+                            <path d="M0,10 h200 v20 h-200 v-20 M0,10 v-5 h200 v5" 
+                                  fill="#4f9482" stroke="rgba(148, 130, 79, 0.3)" stroke-width="0.5"/>
+                            
+                            <!-- Supports de montage avec effet 3D -->
+                            <path d="M-10,5 h20 v30 h-20 v-30 M-10,5 v-5 h20 v5" 
+                                  fill="#0f0f17" stroke="rgba(148, 130, 79, 0.3)" stroke-width="0.5"/>
+                            <circle cx="0" cy="20" r="5" fill="#4f9482"/>
+                            
+                            <path d="M290,5 h20 v30 h-20 v-30 M290,5 v-5 h20 v5" 
+                                  fill="#0f0f17" stroke="rgba(148, 130, 79, 0.3)" stroke-width="0.5"/>
+                            <circle cx="300" cy="20" r="5" fill="#4f9482"/>
+                            
+                            <!-- Boîtier électrique avec effet 3D -->
+                            <path d="M220,0 h40 v15 h-40 v-15 M220,0 v-5 h40 v5" 
+                                  fill="#0f0f17" stroke="rgba(148, 130, 79, 0.3)" stroke-width="0.5"/>
+                            <path d="M240,-15 C240,-5 240,0 240,0" stroke="#4f9482" stroke-width="1"/>
+                            <path d="M250,-15 C250,-5 250,0 250,0" stroke="#0f0f17" stroke-width="1"/>
+                            
+                            <!-- Points de capteur -->
+                            <circle cx="100" cy="35" r="3" fill="#f00" class="sensor-point"/>
+                            <circle cx="200" cy="35" r="3" fill="#f00" class="sensor-point"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="guillotine guillotine-left">
+                    <div class="guillotine-back-wall"></div>
+                    <div class="guillotine-left-wall"></div>
+                </div>
+                <div class="guillotine guillotine-right">
+                    <div class="guillotine-back-wall"></div>
+                    <div class="guillotine-left-wall"></div>
+                </div>
+            </div>
+            
+            <!-- Ajout des boutons de contrôle -->
+            <div class="caisson-controls">
+                <button class="control-btn">ON</button>
+                <button class="control-btn">OFF</button>
+                <button class="control-btn">AUTO</button>
+            </div>
+        </div>
+    </main>
+    <div class="menu-container">
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="side-menu">
+            <div class="menu-items">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    Accueil
+                </a>
+                <a href="alarms.html" class="menu-item">
+                    <i class="fas fa-bell"></i>
+                    Alarmes
+                </a>
+                <a href="dimensions.html" class="menu-item">
+                    <i class="fas fa-ruler-combined"></i>
+                    Dimensions
+                </a>
+                <a href="materials.html" class="menu-item">
+                    <i class="fas fa-layer-group"></i>
+                    Matériaux
+                </a>
+                <a href="settings.html" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    Paramètres
+                </a>
+            </div>
+        </nav>
+    </div>
+    <script src="js/menu.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMenu();
+        });
+    </script>
+    <script src="js/caisson.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html> 
