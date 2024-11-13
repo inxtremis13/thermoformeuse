@@ -1,0 +1,33 @@
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #EEEEEE;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background: #2a2a3b;
+    border: 1px solid rgba(148, 130, 79, 0.3);
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background: rgba(148, 130, 79, 0.2);
+}
+
+.action-btn.view-btn {
+    background: #007BFF;
+}
+
+.action-btn.acknowledge-btn {
+    background: #00C851;
+}
+
+.action-btn.ignore-btn {
+    background: #FFBB33;
+}
+
+.action-btn.delete-btn {
+    background: #FF4444;
+} 

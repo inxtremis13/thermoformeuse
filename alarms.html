@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord des Alarmes</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/menu.css"> 
+    <link rel="stylesheet" href="css/alarms.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="top-bar">
+        <div class="title-container">
+            <h1>Tableau de Bord des Alarmes</h1>
+        </div>
+    </header>
+
+    <main class="alarm-dashboard">
+        <!-- Section des options intégrée -->
+        <section class="options-section">
+            <div class="options-container">
+                <h3>Filtres</h3>
+                <div class="filter-group">
+                    <select class="filter-select" id="severity-filter">
+                        <option value="all">Toutes les sévérités</option>
+                        <option value="critical">Critique</option>
+                        <option value="warning">Avertissement</option>
+                        <option value="normal">Normal</option>
+                    </select>
+                    <select class="filter-select" id="type-filter">
+                        <option value="all">Tous les types</option>
+                        <option value="temperature">Température</option>
+                        <option value="pressure">Pression</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="security">Sécurité</option>
+                        <option value="system">Système</option>
+                    </select>
+                    <button class="control-btn" id="clear-filters">
+                        <i class="fas fa-sync-alt"></i>
+                        Réinitialiser
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section des statistiques -->
+        <section class="stats-section">
+            <div class="stat-box critical">
+                <i class="fas fa-exclamation-circle"></i>
+                <div class="stat-info">
+                    <span class="stat-count">0</span>
+                    <span class="stat-label">Critiques</span>
+                </div>
+            </div>
+            <div class="stat-box warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="stat-info">
+                    <span class="stat-count">0</span>
+                    <span class="stat-label">Avertissements</span>
+                </div>
+            </div>
+            <div class="stat-box normal">
+                <i class="fas fa-info-circle"></i>
+                <div class="stat-info">
+                    <span class="stat-count">0</span>
+                    <span class="stat-label">Normales</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section principale des alarmes -->
+        <section class="alarm-section">
+            <h2>Alarmes Actuelles</h2>
+            <div class="alarm-list" id="alarm-container">
+                <!-- Les alarmes seront insérées ici par JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <div class="menu-container">
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="side-menu">
+            <div class="menu-items">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    Accueil
+                </a>
+                <a href="alarms.html" class="menu-item">
+                    <i class="fas fa-bell"></i>
+                    Alarmes
+                </a>
+                <a href="dimensions.html" class="menu-item">
+                    <i class="fas fa-ruler-combined"></i>
+                    Dimensions
+                </a>
+                <a href="materials.html" class="menu-item">
+                    <i class="fas fa-layer-group"></i>
+                    Matériaux
+                </a>
+                <a href="settings.html" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    Paramètres
+                </a>
+            </div>
+        </nav>
+    </div>
+    <script type="module">
+        import { menuManager } from './js/modules/menu.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            menuManager.init();
+        });
+    </script>
+
+    <script src="js/alarms.js"></script>
+</body>
+</html>
