@@ -4,73 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Thermoformeuse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/alarms.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="top-bar">
-
-        <h1>Dashboard Thermoformeuse</h1>
-        <div class="version">version 1.0</div>
+        <div class="title-container">
+            <h1>Dashboard thermoformeuse</h1>
+        </div>
+        <div class="version">Version 1.0</div>
     </div>
 
     <main>
         <section class="temperature-grid">
-            <div class="temperature-block">
+            <div class="temperature-block" id="temperature-zone-1">
                 <h2>Température Zone 1</h2>
                 <div class="temp-circle">
                     <div class="temp-value">0°C</div>
                 </div>
                 <div class="slider-container">
-                    <label>Consigne :</label>
-                    <input type="range" class="slider" min="0" max="200" value="0">
+                    <label>
+                        Consigne : 
+                        <span class="slider-value-container">
+                            <span class="slider-value">0°C</span>
+                            <i class="fas fa-pencil edit-value" title="Éditer"></i>
+                        </span>
+                    </label>
+                    <input type="range" class="slider" min="0" max="1000" value="0" step="1">
                 </div>
                 <div class="slider-container">
                     <label>
-                        Seuil d'alarme : <span class="slider-value">0°C</span>
+                        Seuil d'alarme : 
+                        <span class="slider-value-container">
+                            <span class="slider-value">50°C</span>
+                            <i class="fas fa-pencil edit-value" title="Éditer"></i>
+                        </span>
                     </label>
-                    <input type="range" class="slider alarme" min="0" max="200" value="0">
+                    <input type="range" class="slider alarme" min="0" max="1050" value="50" step="1">
                 </div>
                 <div class="zone-status">
                     État de la zone : <span class="status-text">inactive</span>
                 </div>
                 <div class="button-group">
-                    <button class="control-btn">ON</button>
-                    <button class="control-btn">OFF</button>
-                    <button class="control-btn">AUTO</button>
+                    <button class="control-btn" onclick="handleOn()">ON</button>
+                    <button class="control-btn" onclick="handleOff()">OFF</button>
+                    <button class="control-btn" onclick="handleAuto()">AUTO</button>
                 </div>
             </div>
 
-            <div class="temperature-block">
+            <div class="temperature-block" id="temperature-zone-2">
                 <h2>Température Zone 2</h2>
                 <div class="temp-circle">
                     <div class="temp-value">0°C</div>
                 </div>
                 <div class="slider-container">
-                    <label>Consigne :</label>
-                    <input type="range" class="slider" min="0" max="200" value="0">
+                    <label>
+                        Consigne : 
+                        <span class="slider-value-container">
+                            <span class="slider-value">0°C</span>
+                            <i class="fas fa-pencil edit-value" title="Éditer"></i>
+                        </span>
+                    </label>
+                    <input type="range" class="slider" min="0" max="1050" value="0" step="1">
                 </div>
                 <div class="slider-container">
                     <label>
-                        Seuil d'alarme : <span class="slider-value">0°C</span>
+                        Seuil d'alarme : 
+                        <span class="slider-value-container">
+                            <span class="slider-value">50°C</span>
+                            <i class="fas fa-pencil edit-value" title="Éditer"></i>
+                        </span>
                     </label>
-                    <input type="range" class="slider alarme" min="0" max="200" value="0">
+                    <input type="range" class="slider alarme" min="0" max="1050" value="50" step="1">
                 </div>
                 <div class="zone-status">
                     État de la zone : <span class="status-text">inactive</span>
                 </div>
                 <div class="button-group">
-                    <button class="control-btn">ON</button>
-                    <button class="control-btn">OFF</button>
-                    <button class="control-btn">AUTO</button>
+                    <button class="control-btn" onclick="handleOn()">ON</button>
+                    <button class="control-btn" onclick="handleOff()">OFF</button>
+                    <button class="control-btn" onclick="handleAuto()">AUTO</button>
                 </div>
             </div>
 
-            <div class="temperature-block">
+            <div class="temperature-block" id="temperature-zone-3">
                 <h2>Température Zone 3</h2>
                 <div class="temp-circle">
                     <div class="temp-value">0°C</div>
@@ -78,23 +100,30 @@
                 <div class="slider-container">
                     <label>
                         <span>Consigne :</span>
-                        <span class="slider-value">0°C</span>
+                        <span class="slider-value-container">
+                            <span class="slider-value">0°C</span>
+                            <i class="fas fa-pencil edit-value" title="Éditer"></i>
+                        </span>
                     </label>
-                    <input type="range" class="slider" min="0" max="200" value="0">
+                    <input type="range" class="slider" min="0" max="1000" value="0" step="1">
                 </div>
                 <div class="slider-container">
                     <label>
-                        Seuil d'alarme : <span class="slider-value">0°C</span>
+                        Seuil d'alarme : 
+                        <span class="slider-value-container">
+                            <span class="slider-value">50°C</span>
+                            <i class="fas fa-pencil edit-value" title="Éditer"></i>
+                        </span>
                     </label>
-                    <input type="range" class="slider alarme" min="0" max="200" value="0">
+                    <input type="range" class="slider alarme" min="0" max="1050" value="50" step="1">
                 </div>
                 <div class="zone-status">
                     État de la zone : <span class="status-text">inactive</span>
                 </div>
                 <div class="button-group">
-                    <button class="control-btn">ON</button>
-                    <button class="control-btn">OFF</button>
-                    <button class="control-btn">AUTO</button>
+                    <button class="control-btn" onclick="handleOn()">ON</button>
+                    <button class="control-btn" onclick="handleOff()">OFF</button>
+                    <button class="control-btn" onclick="handleAuto()">AUTO</button>
                 </div>
             </div>
         </section>
@@ -113,6 +142,8 @@
                 </div>                
                 <div class="caisson-back-wall"></div>
                 <div class="caisson-left-wall"></div>
+                <div class="caisson-right-wall"></div>
+                <div class="caisson-front-wall"></div>  <!-- Ajout de cette ligne -->
                 <div class="caisson-back-wall-depth"></div>
                 <div class="caisson-left-wall-depth"></div>
                 <div class="caisson-right-wall-depth"></div>
@@ -213,12 +244,13 @@
             
             <!-- Ajout des boutons de contrôle -->
             <div class="caisson-controls">
-                <button class="control-btn">ON</button>
-                <button class="control-btn">OFF</button>
-                <button class="control-btn">AUTO</button>
+                <button class="control-btn" onclick="handleOn()">ON</button>
+                <button class="control-btn" onclick="handleOff()">OFF</button>
+                <button class="control-btn" onclick="handleAuto()">AUTO</button>
             </div>
         </div>
     </main>
+    <!-- Menu latéral -->
     <div class="menu-container">
         <div class="menu-toggle">
             <i class="fas fa-bars"></i>
@@ -248,13 +280,32 @@
             </div>
         </nav>
     </div>
-    <script src="js/menu.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeMenu();
+    <script type="module">
+        import { menuManager } from './js/modules/menu.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            menuManager.init();
         });
     </script>
-    <script src="js/caisson.js"></script>
-    <script src="js/menu.js"></script>
+
+    <!--<script type="module" src="js/modules/temperatureSimulator.js"></script>-->
+    <script type="module" src="js/modules/temperatureControl.js"></script>
+    <script type="module" src="js/modules/dashboardManager.js"></script>
+    <script type="module" src="js/modules/caisson.js"></script>
+    <script type="module" src="js/modules/caissonControl.js"></script>
+    <script type="module" src="js/modules/aspiratingControl.js"></script>
+    <script type="module">
+        import { temperatureSimulator } from './js/modules/temperatureSimulator.js';
+        import { temperatureControl } from './js/modules/temperatureControl.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            temperatureControl.init();
+            
+            // Optionnel : pour le debugging
+            document.addEventListener('temperatureUpdate', (event) => {
+                const { zone, current, source } = event.detail;
+                console.log(`Temperature update - Zone: ${zone}, Current: ${current}°C, Source: ${source}`);
+            });
+        });
+    </script>
 </body>
 </html> 

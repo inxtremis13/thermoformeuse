@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimensions - Thermoformeuse</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/dimensions.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="title-container">
+            <h1>Dimensions</h1>
+        </div>
+        <div class="version">Version 1.0</div>
+    </div>
+
+    <main>
+        <div class="dimensions-grid">
+            <!-- Les 3 blocs prédéfinis -->
+            <div class="predefined-dimensions">
+                <div class="dimension-block">
+                    <h2><i class="fas fa-expand-arrows-alt"></i> 120 x 60 cm</h2>
+                    <div class="dimension-preview">
+                        <i class="fas fa-vector-square"></i>
+                    </div>
+                    <div class="dimension-details">
+                        <p><i class="fas fa-arrows-alt-h"></i> Longueur: 120 cm</p>
+                        <p><i class="fas fa-arrows-alt-v"></i> Largeur: 60 cm</p>
+                    </div>
+                    <div class="dimension-controls">
+                        <button class="control-btn set-default">
+                            <i class="fas fa-star"></i>
+                            Par défaut
+                            <span class="tooltip">Définir comme dimension par défaut</span>
+                        </button>
+                        <button class="control-btn select">
+                            <i class="fas fa-check"></i>
+                            Sélectionner
+                            <span class="tooltip">Utiliser cette dimension</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dimension-block">
+                    <h2><i class="fas fa-expand-arrows-alt"></i> 90 x 60 cm</h2>
+                    <div class="dimension-preview"></div>
+                    <div class="dimension-details">
+                        <p>Longueur: 90 cm</p>
+                        <p>Largeur: 60 cm</p>
+                    </div>
+                    <div class="dimension-controls">
+                        <button class="control-btn set-default">Définir par défaut</button>
+                        <button class="control-btn select">Sélectionner</button>
+                    </div>
+                </div>
+
+                <div class="dimension-block">
+                    <h2><i class="fas fa-expand-arrows-alt"></i> 60 x 60 cm</h2>
+                    <div class="dimension-preview"></div>
+                    <div class="dimension-details">
+                        <p>Longueur: 60 cm</p>
+                        <p>Largeur: 60 cm</p>
+                    </div>
+                    <div class="dimension-controls">
+                        <button class="control-btn set-default">Définir par défaut</button>
+                        <button class="control-btn select">Sélectionner</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloc dimension personnalisée sur toute la largeur -->
+            <div class="custom-dimension-block">
+                <div class="dimension-block custom">
+                    <h2><i class="fas fa-edit"></i> Dimension personnalisée</h2>
+                    <div class="custom-inputs">
+                        <div class="input-group">
+                            <label><i class="fas fa-arrows-alt-h"></i> Longueur (cm):</label>
+                            <input type="number" class="dimension-input" id="custom-length" min="1" max="120" placeholder="Entre 1 et 120 cm">
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-arrows-alt-v"></i> Largeur (cm):</label>
+                            <input type="number" class="dimension-input" id="custom-width" min="1" max="60" placeholder="Entre 1 et 60 cm">
+                        </div>
+                    </div>
+                    <div class="dimension-controls">
+                        <button class="control-btn create">
+                            <i class="fas fa-plus"></i>
+                            Créer
+                            <span class="tooltip">Créer une nouvelle dimension</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Menu latéral -->
+    <div class="menu-container">
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="side-menu">
+            <div class="menu-items">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    Accueil
+                </a>
+                <a href="alarms.html" class="menu-item">
+                    <i class="fas fa-bell"></i>
+                    Alarmes
+                </a>
+                <a href="dimensions.html" class="menu-item">
+                    <i class="fas fa-ruler-combined"></i>
+                    Dimensions
+                </a>
+                <a href="materials.html" class="menu-item">
+                    <i class="fas fa-layer-group"></i>
+                    Matériaux
+                </a>
+                <a href="settings.html" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    Paramètres
+                </a>
+            </div>
+        </nav>
+    </div>
+    <script type="module">
+        import { menuManager } from './js/modules/menu.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            menuManager.init();
+        });
+    </script>
+    <script src="js/caisson.js"></script>
+</body>
+</html> 

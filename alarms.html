@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau de Bord des Alarmes</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/menu.css"> 
     <link rel="stylesheet" href="css/alarms.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="top-bar">
-        <div class="header-left">
+        <div class="title-container">
             <h1>Tableau de Bord des Alarmes</h1>
         </div>
     </header>
@@ -109,14 +108,13 @@
             </div>
         </nav>
     </div>
-    <script src="js/menu.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeMenu();
+    <script type="module">
+        import { menuManager } from './js/modules/menu.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            menuManager.init();
         });
     </script>
 
     <script src="js/alarms.js"></script>
-    <script src="js/menu.js"></script>
 </body>
 </html>
